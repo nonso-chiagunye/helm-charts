@@ -672,6 +672,18 @@ serverFiles:
         static_configs:
           - targets:
             - localhost:9090
+      - job_name: ec2-monitoring-node-exporter
+        scheme: https
+        tls_config:
+          insecure_skip_verify: true
+        static_configs:
+        - targets:
+          - 'ip-172-31-1-233.eu-west-3.compute.internal:9100'
+        dns_sd_configs:
+        - type: A
+          port: 9100
+          names:
+          - 'ip-172-31-1-233.eu-west-3.compute.internal'
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)
