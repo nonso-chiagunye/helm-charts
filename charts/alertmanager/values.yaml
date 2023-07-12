@@ -201,7 +201,7 @@ configAnnotations: {}
 
 config:
   global: {}
-    slack_api_url: 'https://hooks.slack.com/services/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'
+   # slack_api_url: ''
 
   templates:
     - '/etc/alertmanager/*.tmpl'
@@ -209,8 +209,8 @@ config:
   receivers:
     - name: default-receiver
       slack_configs:
-      - channel: 'cyberark-monitor'
-        send_resolved: true
+     # - channel: 'default-receiver'
+      #  send_resolved: true
 
   route:
     group_wait: 10s
